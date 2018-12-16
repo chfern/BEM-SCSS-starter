@@ -1,0 +1,94 @@
+/*
+0 - 600px phone
+600 - 900 tablet portrait
+900 - 1200 tablet landscape
+1200 - 1800 normal
+1800 ++ Big desktop
+*/
+/*
+    breakPoint args : 
+    - phone
+    - tab-port
+    - tab-land
+    - big-desktop
+*/
+/*
+Basic reset
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  /*sets up root fontsize, (1 rem = 10px)*/
+  font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+
+body {
+  padding: 3rem;
+  box-sizing: border-box; }
+  @media only screen and (max-width: 56.25em) {
+    body {
+      padding: 0; } }
+  @media only screen and (max-width: 37.5em) {
+    body {
+      overflow-x: hidden; } }
+
+@keyframes keyframe0 {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); }
+  60% {
+    opacity: .8;
+    transform: translateX(10px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row--gutter-vertical {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: '';
+    display: table;
+    clear: both; }
+  @media only screen and (max-width: 56.25em) {
+    .row {
+      max-width: 50rem;
+      padding: 0 3rem; } }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+      @media only screen and (max-width: 56.25em) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 6rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .row [class^="col-"] {
+        width: 100% !important; } }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem)/2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 6rem*2)/3); }
+  .row .col-2-of-3 {
+    width: calc(2*( (100% - 6rem*2) /3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 6rem*3)/4); }
+  .row .col-2-of-4 {
+    width: calc(2*( (100% - 6rem*3) /4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3*((100% - 6rem*3) /4) + 6rem*2); }
